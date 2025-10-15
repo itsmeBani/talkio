@@ -11,7 +11,7 @@ import {
 
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs.tsx";
 import ConversationFilesViewer from "@/feature/ConversationSettings/ConversationFilesViewer.tsx";
-import {useQueries, useQuery} from "@tanstack/react-query";
+import {useQueries} from "@tanstack/react-query";
 import {fetchConversationFiles} from "@/query/fetchFiles.ts";
 import ManageConversation from "@/feature/ConversationSettings/ManageConversation.tsx";
 
