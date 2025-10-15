@@ -111,7 +111,8 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
         await supabase.auth.signInWithOAuth({
             provider: 'facebook',
             options: {
-                redirectTo: `http://localhost:5173/login`,
+                redirectTo: ` https://talkio-xd2v.vercel.app/login`,
+                // redirectTo: `http://localhost:5173/login`,
             },
         })
 
