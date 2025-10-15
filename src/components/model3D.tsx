@@ -9,7 +9,9 @@ function Model3D() {
 
 
     const Model = () => {
-        const gltf = useLoader(GLTFLoader, "../../public/scene.gltf");
+        // const gltf = useLoader(GLTFLoader, "../../public/scene.gltf");
+        const gltf = useLoader(GLTFLoader, "/scene.gltf");
+
         return (
             <>
                 <primitive object={gltf.scene} scale={0.4} />
