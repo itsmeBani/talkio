@@ -1,0 +1,11 @@
+Model Information:
+* title:	gaming_desktop_pc_blend_file
+* source:	https://sketchfab.com/3d-models/gaming-desktop-pc-blend-file-ce5195f95f454fd991f2c3435dc3e043
+* author:	ap-school (https://sketchfab.com/ap-school)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "gaming_desktop_pc_blend_file" (https://sketchfab.com/3d-models/gaming-desktop-pc-blend-file-ce5195f95f454fd991f2c3435dc3e043) by ap-school (https://sketchfab.com/ap-school) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
