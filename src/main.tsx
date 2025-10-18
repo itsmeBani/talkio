@@ -12,7 +12,7 @@ import { Toaster} from 'sonner'
 const queryClient=new QueryClient
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
      <AuthProvider>
         <QueryClientProvider client={queryClient}>
             <App/>

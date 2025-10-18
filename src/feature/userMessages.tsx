@@ -138,7 +138,7 @@ function UserMessages() {
                                     isFetchingNextPage={isFetchingNextPage}
                                     fetchNextPage={() => fetchNextPage().then()}/>
 
-                        <div className={"gap-3  p-4   pb-10  flex flex-col"}>
+                        <div className={"gap-2  p-4   pb-10  flex flex-col"}>
                             {messages?.map(({content, sender, reactions, id, isDeleted, reply_to, image_url}, index) => {
 
                                 const isBelongToCurrentUser = currentUser?.id === sender?.id
