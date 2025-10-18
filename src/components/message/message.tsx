@@ -137,7 +137,7 @@ export const MessageAvatar = ({
                                   ...props
                               }: MessageAvatarProps) => (
     <Avatar
-        className={cn('size-7   ring-1 ring-border', className)}
+        className={cn('size-10   ring-1 ring-border', className)}
         {...props}
     >
         <AvatarImage alt="" className="mt-0 mb-0" src={src}/>
@@ -319,7 +319,7 @@ export const UnsentMessageFallback=({children} :UnsentMessageFallbackProps)=>{
         return (
             <div
                 className={cn(
-                    "flex flex-col gap-2  rounded-lg px-3 py-2 text-sm",
+                    "flex flex-col gap-2  rounded-lg px-3 py-2 text-xs lg:text-sm",
                      "bg-background  text-black/70 dark:bg-[#1C1D1F] border  border-foreground/40 dark:border-white/50 dark:text-white/50 italic"
                 )}>
                 <div>{children}</div>
@@ -334,7 +334,7 @@ export const MessageContent=({content,isMessageDeleted}:MessageContentProps)=>{
     return (
         <div className="">
             <div className=" group-[.not-current-user]:bg-secondary border  group-[.current-user]:bg-blue-600 px-4 p-2 rounded-md max-w-md  ">
-                <p className="barlow-regular break-all text-foreground  group-[.current-user]:text-white dark:text-white text-sm">
+                <p className="barlow-regular break-all text-foreground  group-[.current-user]:text-white dark:text-white  text-xs lg:text-sm">
                     {content}
                 </p>
             </div>

@@ -156,7 +156,7 @@ function UserMessages() {
                                         />
                                         <div className="flex gap-2  group-[.current-user]:flex-row-reverse  ">
                                             <MessageAvatar src={sender?.avatar_url || ""} name={sender?.full_name || "unknown"}
-                                                           className="w-10 h-10 mt-[2px]  "/>
+                                                           className="lg:w-10 lg:h-10 h-8 w-8 mt-[2px]  "/>
                                             <div
                                                 className="flex  group-[.current-user]:place-items-end place-items-start flex-col  ">
                                                 <Popover>

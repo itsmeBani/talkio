@@ -41,7 +41,7 @@ function ConversationPreferences({conversationId}: ConversationPreferencesProps)
 
 
                 <div className="flex gap-3 place-items-center ">
-                    <Link className={cn(buttonVariants({variant: "outline",size: "icon"}),"lg:hidden block")} to={"/"} ><ChevronLeft/></Link>
+                    <Link className={cn(buttonVariants({variant: "outline",size: "icon"}),"lg:hidden flex")} to={"/"} ><ChevronLeft/></Link>
                     <Avatar className="h-10 w-10 rounded-lg">
                         <AvatarImage src={""} alt={""}/>
                         <AvatarFallback className="rounded-lg">CN</AvatarFallback>
