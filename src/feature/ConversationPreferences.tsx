@@ -1,5 +1,5 @@
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar.tsx";
-import {Bolt, FolderOpen, Settings, User} from "lucide-react";
+import {Bolt, ChevronLeft, FolderOpen, Settings, User} from "lucide-react";
 import {
     Drawer,
     DrawerContent,
@@ -14,6 +14,9 @@ import ConversationFilesViewer from "@/feature/ConversationSettings/Conversation
 import {useQueries} from "@tanstack/react-query";
 import {fetchConversationFiles} from "@/query/fetchFiles.ts";
 import ManageConversation from "@/feature/ConversationSettings/ManageConversation.tsx";
+import {buttonVariants} from "@/components/ui/button.tsx";
+import {Link} from "react-router-dom";
+import {cn} from "@/lib/utils.ts";
 
 
 interface ConversationPreferencesProps {
@@ -36,7 +39,9 @@ function ConversationPreferences({conversationId}: ConversationPreferencesProps)
             className=" flex  w-full p-4 py-3     bg-background ">
             <div className="flex place-items-center w-full justify-between">
 
-                <div className="flex gap-3 ">
+
+                <div className="flex gap-3 place-items-center ">
+                    <Link className={cn(buttonVariants({variant: "outline",size: "icon"}),"lg:hidden block")} to={"/"} ><ChevronLeft/></Link>
                     <Avatar className="h-10 w-10 rounded-lg">
                         <AvatarImage src={""} alt={""}/>
                         <AvatarFallback className="rounded-lg">CN</AvatarFallback>

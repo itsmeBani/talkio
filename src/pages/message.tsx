@@ -14,22 +14,26 @@ function MessagePage() {
         const isValidUserID=async ()=>{
             if (userID){
                 const exist=await isUserExist(userID)
-                if (!exist)  navigate("/");
+                if (!exist) navigate("/")
             }
         }
         isValidUserID().then()
     }, [navigate, userID]);
 
-    return (
-        <div className="flex     w-full  h-full   ">
 
-            <div className="lg:min-w-[350px] h-full   overflow-y-auto">
+    const style=userID ? "show-messages" : "show-user"
+    return (
+        <div className={`flex  group    w-full  h-full  ${style} `}>
+
+            <div className="min-w-full lg:min-w-[350px] h-full group-[.show-messages]:hidden lg:group-[.show-messages]:flex   overflow-y-auto">
                 <Users/>
             </div>
 
 
 
-               <Outlet/>
+               <div className="w-full h-full group-[.show-user]:hidden lg:group-[.show-user]:flex">
+                   <Outlet/>
+               </div>
 
 
 

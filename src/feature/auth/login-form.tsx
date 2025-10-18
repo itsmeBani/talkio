@@ -53,7 +53,7 @@ const {loginForm,loginWithEmail,loginWithFacebook}=useAuth()
                               </FormItem>
                           )}
                       />
-                      <Button className="w-full dark:text-white py-3" type="submit">Submit</Button>
+                      <Button className="w-full dark:text-white py-3" type="submit">Sign in</Button>
                   </form>
               </Form>
           </div>
@@ -63,10 +63,10 @@ const {loginForm,loginWithEmail,loginWithFacebook}=useAuth()
           </span>
         </div>
 
-          <Button onClick={loginWithFacebook}  variant="outline" className="text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"
-                   stroke="white" strokeWidth="2"  strokeLinecap="round" strokeLinejoin="round"
-                   className="lucide lucide-facebook-icon lucide-facebook">
+          <Button onClick={loginWithFacebook}  variant="outline" className="dark:text-white hover:border-blue-100">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    strokeWidth="2"  strokeLinecap="round" strokeLinejoin="round"
+                   className="lucid fill-blue-500 stroke-blue-500   lucide-facebook-icon lucide-facebook">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
               </svg>
               Login with Facebook
