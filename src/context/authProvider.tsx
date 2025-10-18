@@ -113,7 +113,7 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
             options: {
 
 
-                redirectTo: ` https://talkio-xd2v-a13mtwgwz-jiovani-a-fabros-projects.vercel.app/`,
+                redirectTo: `https://talkio-xd2v.vercel.app/`,
                 // redirectTo: `http://localhost:5173/login`,
             },
         })
