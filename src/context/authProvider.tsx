@@ -115,7 +115,7 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
 
 
                 redirectTo: `https://talkio-xd2v.vercel.app/`,
-                // redirectTo: `http://localhost:5173/login`,
+                //redirectTo: `http://localhost:5173/login`,
             },
         })
 

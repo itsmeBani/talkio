@@ -10,7 +10,7 @@ import {
     EmojiPicker,
     EmojiPickerContent,
     EmojiPickerFooter,
-    EmojiPickerSearch,
+
 } from "@/components/ui/emoji-picker.tsx";
 import {useRef, useState, type FormEvent, type ChangeEvent} from "react";
 
@@ -118,7 +118,7 @@ function InputMessage({action}: MessageProps) {
                                 setMessage((prev) => prev + emoji)
                             }
                         >
-                            <EmojiPickerSearch/>
+                            {/*<EmojiPickerSearch />*/}
                             <EmojiPickerContent/>
                             <EmojiPickerFooter/>
                         </EmojiPicker>
