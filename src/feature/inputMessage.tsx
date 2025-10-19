@@ -111,7 +111,7 @@ function InputMessage({action}: MessageProps) {
                             <SmilePlus/>
                         </Button>
                     </PopoverTrigger>
-                    <PopoverContent className={"z-[999]"}>
+                    <PopoverContent className={"z-[999] border-none bg-unset "}>
                         <EmojiPicker
                             className="max-h-lg max-h-[300px]  rounded-lg border shadow-md"
                             onEmojiSelect={({emoji}) =>
