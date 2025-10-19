@@ -125,7 +125,7 @@ function UserMessages() {
     return (
 
 
-        <div className=" h-full     w-full   flex   flex-col    justify-between   ">
+        <div className=" h-full   relative     flex   flex-col    justify-between   ">
 
             <ConversationPreferences conversationId={conversation?.id} />
 

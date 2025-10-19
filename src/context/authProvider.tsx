@@ -100,6 +100,7 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
 
     const logout = async () => {
         const {error} = await supabase.auth.signOut({scope: "local"})
+        console.log(error)
         if (error) return toast.error("Something Went Wrong")
         setCurrentUser(null)
         toast.success("Logout Successfully")
