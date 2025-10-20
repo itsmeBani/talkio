@@ -125,12 +125,13 @@ function UserMessages() {
     return (
 
 
-        <div className=" h-full   relative     flex   flex-col    justify-between   ">
+        <div className=" h-full   relative     flex   flex-col    justify-between  place-items-center ">
 
-            <ConversationPreferences conversationId={conversation?.id} />
 
-            <div className={"w-full h-full   flex  overflow-hidden "}>
-                <div ref={messageContainerRef} className="flex pt-2 flex-col overflow-y-auto relative    h-full w-full bg-blue-100/5 gap-2      ">
+                <ConversationPreferences conversationId={conversation?.id} />
+
+            <div className={"w-full  h-full overflow-hidden "}>
+                <div ref={messageContainerRef} className="flex pt-2 flex-col     overflow-y-auto  h-full w-full bg-blue-100/5 gap-2      ">
 
 
                     {isLoading && <Loader />}
@@ -138,7 +139,7 @@ function UserMessages() {
                                     isFetchingNextPage={isFetchingNextPage}
                                     fetchNextPage={() => fetchNextPage().then()}/>
 
-                        <div className={"gap-2  p-4   pb-10  flex flex-col"}>
+                        <div className={"gap-2  p-4 h-full   pb-10   flex flex-col"}>
                             {messages?.map(({content, sender, reactions, id, isDeleted, reply_to, image_url}, index) => {
 
                                 const isBelongToCurrentUser = currentUser?.id === sender?.id
@@ -227,7 +228,10 @@ function UserMessages() {
                 </div>
             }
 
-            <InputMessage action={SendMessage}/>
+
+                <InputMessage action={SendMessage}/>
+
+
         </div>
     );
 }

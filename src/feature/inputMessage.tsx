@@ -58,7 +58,7 @@ function InputMessage({action}: MessageProps) {
     };
 
     return (
-        <div className="w-full flex bg-background z-40  flex-col gap-2 p-2 lg:p-3">
+        <div className="w-full flex h-auto bg-background z-40  flex-col gap-2 p-2 lg:p-3">
             {preview && (
                 <div className="w-full flex justify-start items-center gap-2">
                    <div className="relative">

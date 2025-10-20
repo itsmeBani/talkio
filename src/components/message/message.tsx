@@ -45,7 +45,7 @@ export interface MessageContainerProps{
 export const MessageContainer=({children,isBelongToCurrentUser}:MessageContainerProps)=>{
     const isBelongToCurrentUserStyle=isBelongToCurrentUser? "current-user" :"not-current-user"
     return (
-        <div className={`flex group ${isBelongToCurrentUserStyle} w-full flex-col     `}>
+        <div className={`flex group ${isBelongToCurrentUserStyle} w-full  flex-col     `}>
             <div className="group-[.current-user]:place-items-end">
                 {children}
             </div>

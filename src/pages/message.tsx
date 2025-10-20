@@ -23,7 +23,7 @@ function MessagePage() {
 
     const style=userID ? "show-messages" : "show-user"
     return (
-        <div className={`flex  group    w-full  h-full  ${style} `}>
+        <div className={`flex  group  place-items-center  w-full  h-full  ${style} `}>
 
             <div className="min-w-full lg:min-w-[350px] h-full group-[.show-messages]:hidden lg:group-[.show-messages]:flex   overflow-y-auto">
                 <Users/>
@@ -31,7 +31,7 @@ function MessagePage() {
 
 
 
-               <div className="w-full h-full group-[.show-user]:hidden lg:group-[.show-user]:flex">
+               <div className="w-full h-full group-[.show-user]:hidden lg:group-[.show-user]:flex ">
                    <Outlet/>
                </div>
 
