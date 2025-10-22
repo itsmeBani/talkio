@@ -16,9 +16,9 @@ function Login() {
     return (
         <section className="w-full h-full flex flex-col ">
                 <div className="flex justify-center p-5 gap-2 md:justify-start">
-                    <a href="#" className="flex items-center gap-2 text-blue-500 font-medium">
-                        <Origami className="text-blue-500"/>
-                        WeTalk
+                    <a href="#" className="flex items-center gap-2 text-blue-500 Aeonik-bold">
+                        <Origami className="text-blue-500 "/>
+                        Talkio
                     </a>
                 </div>
             <div className="flex flex-col items-center h-full justify-end   text-center    px-6">
