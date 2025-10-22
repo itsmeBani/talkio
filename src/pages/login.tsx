@@ -23,10 +23,10 @@ function Login() {
                 </div>
             <div className="flex flex-col items-center h-full justify-end   text-center    px-6">
              <div className="flex flex-col z-50 items-center">
-                 <h1 className="text-4xl  Aeonik-bold  md:text-6xl font-bold  mb-4">
+                 <h1 className="text-3xl  Aeonik-bold  lg:text-6xl font-bold  mb-4">
                      Stay Connected Instantly with <span className="Aeonik-bold text-primary">Talkio</span>
                  </h1>
-                 <p className="text-lg  md:text-xl text-foreground/80 Aeonik-regular  max-w-2xl mb-8">
+                 <p className="text-md  md:text-xl text-foreground/80 Aeonik-regular  max-w-2xl mb-3 md:mb-8">
                      Talkio brings people closer through fast, secure, and real-time messaging.
                      Chat, share, and collaborate — all in one seamless experience.
                  </p>
