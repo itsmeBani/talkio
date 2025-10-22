@@ -37,7 +37,7 @@ function ConversationFilesViewer({files}: ConversationFilesViewerProps) {
 
                    {files?.map(({name, url,created_at}, i) => (
 
-                       <Tooltip>
+                       <Tooltip key={i}>
                            <TooltipTrigger>
                                <div
                                    key={i}

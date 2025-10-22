@@ -5,6 +5,7 @@
 * {
   scrollbar-width: auto;
   scroll-behavior: smooth;
+    box-sizing: border-box;
   scrollbar-color: gray transparent; /* thumb color, track transparent */
 }
 :root {
@@ -288,4 +289,87 @@
   font-family: "Barlow", sans-serif;
   font-weight: 900;
   font-style: italic;
+}
+
+
+@font-face {
+    font-family: "Aeonik Pro";
+    src: url("./assets/fonts/AeonikPro-Thin.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Aeonik Pro";
+    src: url("./assets/fonts/AeonikPro-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Aeonik Pro";
+    src: url("./assets/fonts/AeonikPro-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Aeonik Pro";
+    src: url("./assets/fonts/AeonikPro-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Aeonik Pro";
+    src: url("./assets/fonts/AeonikPro-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Aeonik Pro";
+    src: url("./assets/fonts/AeonikPro-Black.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+
+.Aeonik-thin {
+    font-family: "Aeonik Pro", sans-serif;
+    font-weight: 100;
+}
+
+.Aeonik-light {
+    font-family: "Aeonik Pro", sans-serif;
+    font-weight: 300;
+}
+
+.Aeonik-regular {
+    font-family: "Aeonik Pro", sans-serif;
+    font-weight: 400;
+}
+
+.Aeonik-medium {
+    font-family: "Aeonik Pro", sans-serif;
+    font-weight: 500;
+}
+
+.Aeonik-bold {
+    font-family: "Aeonik Pro", sans-serif;
+    font-weight: 700;
+}
+
+.Aeonik-black {
+    font-family: "Aeonik Pro", sans-serif;
+    font-weight: 900;
 }

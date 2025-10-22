@@ -1,6 +1,7 @@
 import {supabase} from "@/lib/supabase.ts";
-import type {Database} from "@/lib/databaseT.ts";
 import {queryOptions} from "@tanstack/react-query";
+import type {IConversation} from "@/types/Conversation.ts";
+
 
 
 export const fetchConversation = (CurrentUserID: string | null | undefined, ReceiverID: string | null | undefined) => {
@@ -16,12 +17,27 @@ export const fetchConversation = (CurrentUserID: string | null | undefined, Rece
 const getConversation = async (
     CurrentUserID: string | null | undefined,
     ReceiverID: string | null | undefined
-): Promise<Database['public']['Tables']['conversations']['Row'] | null> => {
+):Promise<IConversation  | null> => {
     if (!CurrentUserID || !ReceiverID) return null;
 
     const { data } = await supabase
         .from("conversations")
-        .select("*")
+        .select(`
+    id,
+    created_at,
+    user_one:users!conversations_user_one_id_users_id_fk(
+      id,
+      full_name,
+      email,
+      avatar_url
+    ),
+    user_two:users!conversations_user_two_id_users_id_fk(
+      id,
+      full_name,
+      email,
+      avatar_url
+    )
+  `)
         .or(
             `and(user_one_id.eq.${CurrentUserID},user_two_id.eq.${ReceiverID}),and(user_one_id.eq.${ReceiverID},user_two_id.eq.${CurrentUserID})`
         )
@@ -42,7 +58,22 @@ const getConversation = async (
                 user_two_id: ReceiverID,
             },
         ])
-        .select()
+        .select(`
+    id,
+    created_at,
+    user_one:users!conversations_user_one_id_users_id_fk(
+      id,
+      full_name,
+      email,
+      avatar_url
+    ),
+    user_two:users!conversations_user_two_id_users_id_fk(
+      id,
+      full_name,
+      email,
+      avatar_url
+    )
+  `)
         .single();
 
     if (insertError) {

@@ -35,6 +35,7 @@ function UserMessages() {
 
     const messageContainerRef = useRef<HTMLDivElement | null>(null)
     const {data: conversation} = useQuery(fetchConversation(currentUser?.id, userID))
+
     const {mutate: RemoveMessage} = useRemoveMessage()
 
     const {data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage} = useInfiniteQuery({
@@ -56,6 +57,13 @@ function UserMessages() {
     })
     const messages = data?.pages.flat().map((content) => content)
     const {uploadFile} = useUploadFile("message_files",conversation?.id);
+
+
+
+    // useEffect(() => {
+    //     messageContainerRef.current?.scrollIntoView({ behavior: "smooth" });
+    // }, [messages]);
+
     useMessageSubscription(conversation?.id);
 
 
@@ -78,6 +86,7 @@ function UserMessages() {
 
                     },
                 ])
+
             setReplyMessage(null)
             messageContainerRef.current?.scrollIntoView({behavior: "smooth"})
 
@@ -88,7 +97,6 @@ function UserMessages() {
         }
 
     }
-
     const HandleReplyMessage = (messageContent: string | null, messageID: string, senderName: string) => {
         setReplyMessage({
             content: messageContent ?? "",
@@ -96,12 +104,9 @@ function UserMessages() {
             senderName: senderName
         })
     }
-
     const CloseReplyMessage = () => {
         setReplyMessage(null)
     }
-
-
     const AddEmojiToMessage = async (messageID: string, reactorUserID: string | undefined, emoji: string) => {
 
         if (!reactorUserID) return
@@ -122,16 +127,17 @@ function UserMessages() {
 
     }
 
+
     return (
 
 
         <div className=" h-full   relative     flex   flex-col    justify-between  place-items-center ">
 
 
-                <ConversationPreferences conversationId={conversation?.id} />
+                <ConversationPreferences conversation={conversation}    />
 
-            <div className={"w-full  h-full overflow-hidden "}>
-                <div ref={messageContainerRef} className="flex pt-2 flex-col     overflow-y-auto  h-full w-full bg-blue-100/5 gap-2      ">
+            <div  className={"w-full h-full  overflow-hidden "}>
+                <div  className="flex pt-2 flex-col    overflow-y-auto  h-full w-full bg-blue-100/5 gap-2      ">
 
 
                     {isLoading && <Loader />}
@@ -139,7 +145,7 @@ function UserMessages() {
                                     isFetchingNextPage={isFetchingNextPage}
                                     fetchNextPage={() => fetchNextPage().then()}/>
 
-                        <div className={"gap-2  p-4 h-full   pb-10   flex flex-col"}>
+                        <div  className={"gap-2  p-4    pb-3   flex flex-col"}>
                             {messages?.map(({content, sender, reactions, id, isDeleted, reply_to, image_url}, index) => {
 
                                 const isBelongToCurrentUser = currentUser?.id === sender?.id
@@ -204,6 +210,7 @@ function UserMessages() {
                                     </MessageContainer>
                                 )
                             })}
+                            <div  ref={messageContainerRef}/>
                         </div>
 
 

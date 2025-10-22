@@ -1,63 +1,77 @@
-import { ThreeDMarquee } from "@/components/ui/shadcn-io/3d-marquee";
-import { LoginForm } from "@/feature/auth/login-form.tsx";
+
 
 import {Origami} from "lucide-react";
-
-
+import {Button} from "@/components/ui/button.tsx";
+import {BackgroundGradient} from "@/components/ui/shadcn-io/background-gradient";
+import heroImageDark from "../assets/heroimageDark.png"
+import heroImageLight from "../assets/heroImageLight.png"
+import {
+    Sheet,
+    SheetContent,
+    SheetTrigger,
+} from "@/components/ui/sheet"
+import {LoginForm} from "@/feature/auth/login-form.tsx";
 function Login() {
-    const images = [
-        "https://assets.aceternity.com/cloudinary_bkp/3d-card.png",
-        "https://assets.aceternity.com/animated-modal.png",
-        "https://assets.aceternity.com/animated-testimonials.webp",
-        "https://assets.aceternity.com/cloudinary_bkp/Tooltip_luwy44.png",
-        "https://assets.aceternity.com/github-globe.png",
-        "https://assets.aceternity.com/glare-card.png",
-        "https://assets.aceternity.com/layout-grid.png",
-        "https://assets.aceternity.com/flip-text.png",
-        "https://assets.aceternity.com/hero-highlight.png",
-        "https://assets.aceternity.com/carousel.webp",
-        "https://assets.aceternity.com/placeholders-and-vanish-input.png",
-        "https://assets.aceternity.com/shooting-stars-and-stars-background.png",
-        "https://assets.aceternity.com/signup-form.png",
-        "https://assets.aceternity.com/cloudinary_bkp/stars_sxle3d.png",
-        "https://assets.aceternity.com/spotlight-new.webp",
-        "https://assets.aceternity.com/cloudinary_bkp/Spotlight_ar5jpr.png",
-        "https://assets.aceternity.com/cloudinary_bkp/Parallax_Scroll_pzlatw_anfkh7.png",
-        "https://assets.aceternity.com/tabs.png",
-        "https://assets.aceternity.com/cloudinary_bkp/Tracing_Beam_npujte.png",
-        "https://assets.aceternity.com/cloudinary_bkp/typewriter-effect.png",
-        "https://assets.aceternity.com/glowing-effect.webp",
-        "https://assets.aceternity.com/hover-border-gradient.png",
-        "https://assets.aceternity.com/cloudinary_bkp/Infinite_Moving_Cards_evhzur.png",
-        "https://assets.aceternity.com/cloudinary_bkp/Lamp_hlq3ln.png",
-        "https://assets.aceternity.com/macbook-scroll.png",
-        "https://assets.aceternity.com/cloudinary_bkp/Meteors_fye3ys.png",
-        "https://assets.aceternity.com/cloudinary_bkp/Moving_Border_yn78lv.png",
-        "https://assets.aceternity.com/multi-step-loader.png",
-        "https://assets.aceternity.com/vortex.png",
-        "https://assets.aceternity.com/wobble-card.png",
-        "https://assets.aceternity.com/world-map.webp",
-    ];
 
     return (
-        <div className="grid w-full min-h-svh lg:grid-cols-2">
-            <div className="flex     bg-background/50 backdrop-blur-md  z-50 flex-col gap-4 p-6 md:p-10">
-                <div className="flex justify-center gap-2 md:justify-start">
+        <section className="w-full h-full flex flex-col ">
+                <div className="flex justify-center p-5 gap-2 md:justify-start">
                     <a href="#" className="flex items-center gap-2 text-blue-500 font-medium">
                         <Origami className="text-blue-500"/>
                         WeTalk
                     </a>
                 </div>
-                <div className="flex flex-1 items-center justify-center">
-                    <div className="w-full max-w-md">
-                        <LoginForm />
+            <div className="flex flex-col items-center h-full justify-end   text-center    px-6">
+             <div className="flex flex-col z-50 items-center">
+                 <h1 className="text-4xl  Aeonik-bold  md:text-6xl font-bold  mb-4">
+                     Stay Connected Instantly with <span className="Aeonik-bold text-primary">Talkio</span>
+                 </h1>
+                 <p className="text-lg  md:text-xl text-foreground/80 Aeonik-regular  max-w-2xl mb-8">
+                     Talkio brings people closer through fast, secure, and real-time messaging.
+                     Chat, share, and collaborate — all in one seamless experience.
+                 </p>
+                 <div className="flex  gap-4">
+                     <Sheet >
+                         <SheetTrigger>   <Button  className={"Aeonik-medium text-white text-md"}>Start Chatting Now</Button></SheetTrigger>
+                         <SheetContent   className="min-w-full lg:min-w-md px-5 flex place-items-center justify-center">
+                           <LoginForm/>
+                         </SheetContent>
+                     </Sheet>
+
+                     <Button disabled={true} variant={"outline"} className={"Aeonik-medium text-md border-foreground"}>Download App</Button>
+
+                 </div>
+                 <p className="mt-6  pb-10 Aeonik-regular text-sm text-foreground/80 ">
+                     Connect instantly. Anytime. Anywhere.
+                 </p>
+             </div>
+                <div className="w-full flex place-items-center   justify-center">
+                    <div className={"max-w-3xl w-full max-h-[400px] "}>
+                        <BackgroundGradient className=" rounded-[22px] rounded-b-none  w-wull p-3 overflow-hidden  bg-white dark:bg-zinc-900">
+
+
+                            <img
+                               src={heroImageLight}
+                                alt="Logo Light"
+                                className="block dark:hidden "
+                            />
+                            <img
+                               src={heroImageDark}
+                                alt="Logo Dark"
+                                className="hidden dark:block "
+                            />
+                        </BackgroundGradient>
+
                     </div>
                 </div>
             </div>
-            <div className=" relative hidden   lg:block">
-                <ThreeDMarquee images={images} />
-            </div>
-        </div>
+
+
+
+
+            <div className="absolute inset-0 z-20 bg-gradient-to-t dark:from-background/80 dark:to-bg-background/90  from-background/30 to-bg-background/90 pointer-events-none" />
+
+        </section>
     );
 }
 

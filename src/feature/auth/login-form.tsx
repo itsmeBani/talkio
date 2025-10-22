@@ -16,7 +16,7 @@ export function LoginForm() {
 const {loginForm,loginWithEmail,loginWithFacebook}=useAuth()
 
   return (
-    <div className={cn("flex flex-col gap-6")} >
+    <div className={cn("flex w-full flex-col gap-6")} >
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-2xl font-bold">Login to your account</h1>
         <p className="text-muted-foreground text-sm text-balance">

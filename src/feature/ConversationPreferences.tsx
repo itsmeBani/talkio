@@ -17,22 +17,27 @@ import ManageConversation from "@/feature/ConversationSettings/ManageConversatio
 import {buttonVariants} from "@/components/ui/button.tsx";
 import {Link} from "react-router-dom";
 import {cn} from "@/lib/utils.ts";
+import type {IConversation} from "@/types/Conversation.ts";
+import useAuth from "@/context/authProvider.tsx";
 
 
 interface ConversationPreferencesProps {
-    conversationId: string | undefined
+
+    conversation: IConversation | null | undefined
 }
 
-function ConversationPreferences({conversationId}: ConversationPreferencesProps) {
+function ConversationPreferences({conversation}: ConversationPreferencesProps) {
 
 
     const results = useQueries({
         queries: [
-            fetchConversationFiles(conversationId),
+            fetchConversationFiles(conversation?.id),
         ]
     })
     const [files] = results
+    const {currentUser}=useAuth()
 
+    const recipient= currentUser?.id === conversation?.user_one.id ? conversation?.user_two : conversation?.user_one
 
     return (
         <div
@@ -43,15 +48,24 @@ function ConversationPreferences({conversationId}: ConversationPreferencesProps)
                 <div className="flex gap-3 place-items-center ">
                     <Link className={cn(buttonVariants({variant: "outline",size: "icon"}),"lg:hidden flex")} to={"/"} ><ChevronLeft/></Link>
                     <Avatar className="h-10 w-10 rounded-lg">
-                        <AvatarImage src={""} alt={""}/>
+                        <AvatarImage src={recipient?.avatar_url ?? ""} alt={""}/>
                         <AvatarFallback className="rounded-lg">CN</AvatarFallback>
-
                     </Avatar>
                     <div className="leading-5">
-                        <h1 className="CircularFont">Jiovani Fbaro</h1>
+                        <h1 className="CircularFont">{recipient?.full_name}</h1>
                         <p className="text-xs">Online</p>
-
                     </div>
+
+                    {/*<div className="flex items-center gap-3">*/}
+                    {/*    /!* Avatar Skeleton *!/*/}
+                    {/*    <div className="h-10 w-10 rounded-lg bg-gray-300 animate-pulse"></div>*/}
+
+                    {/*    /!* Text Skeleton *!/*/}
+                    {/*    <div className="flex flex-col gap-1 w-32">*/}
+                    {/*        <div className="h-4 w-full bg-gray-300 rounded animate-pulse"></div>*/}
+                    {/*        <div className="h-3 w-1/2 bg-gray-300 rounded animate-pulse"></div>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
 
                 <div>
