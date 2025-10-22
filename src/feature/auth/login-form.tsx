@@ -25,7 +25,7 @@ const {loginForm,loginWithEmail,loginWithFacebook}=useAuth()
       </div>
       <div className="grid gap-6">
           <div>
-              <Form {...loginForm}>
+              <Form  {...loginForm}>
                   <form onSubmit={loginForm.handleSubmit(loginWithEmail)} className="space-y-4">
                       <FormField
                           control={loginForm.control}

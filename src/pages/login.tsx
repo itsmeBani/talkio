@@ -31,9 +31,9 @@ function Login() {
                      Chat, share, and collaborate — all in one seamless experience.
                  </p>
                  <div className="flex  gap-4">
-                     <Sheet >
+                     <Sheet  >
                          <SheetTrigger>   <Button  className={"Aeonik-medium text-white text-md"}>Start Chatting Now</Button></SheetTrigger>
-                         <SheetContent   className="min-w-full lg:min-w-md px-5 flex place-items-center justify-center">
+                         <SheetContent onOpenAutoFocus={(e) => e.preventDefault()}    className="min-w-full lg:min-w-md px-5 flex place-items-center justify-center">
                            <LoginForm/>
                          </SheetContent>
                      </Sheet>
