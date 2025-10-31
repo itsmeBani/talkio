@@ -10,9 +10,10 @@ import {
     SheetContent,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import {LoginForm} from "@/feature/auth/login-form.tsx";
-function Login() {
 
+import {Outlet, useNavigate} from "react-router-dom";
+function Login() {
+  const navigate=useNavigate()
     return (
         <section className="w-full h-full flex flex-col ">
                 <div className="flex justify-center p-5 gap-2 md:justify-start">
@@ -31,10 +32,10 @@ function Login() {
                      Chat, share, and collaborate — all in one seamless experience.
                  </p>
                  <div className="flex  gap-4">
-                     <Sheet  >
-                         <SheetTrigger>   <Button  className={"Aeonik-medium text-white text-md"}>Start Chatting Now</Button></SheetTrigger>
+                     <Sheet   >
+                     <SheetTrigger onClick={()=>navigate("/auth/login")} ><Button  className={"Aeonik-medium text-white text-md"}>Start Chatting Now</Button></SheetTrigger>
                          <SheetContent onOpenAutoFocus={(e) => e.preventDefault()}    className="min-w-full lg:min-w-md px-5 flex place-items-center justify-center">
-                           <LoginForm/>
+                           <Outlet/>
                          </SheetContent>
                      </Sheet>
 

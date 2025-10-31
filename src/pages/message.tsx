@@ -1,6 +1,6 @@
 
 
-import {Users} from "@/feature/Users.tsx";
+import {Users} from "@/feature/users/Users.tsx";
 
 import {Outlet, useNavigate, useParams} from "react-router-dom";
 import {isUserExist} from "@/utils/CheckExisting.ts";

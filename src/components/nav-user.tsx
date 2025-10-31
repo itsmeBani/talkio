@@ -1,8 +1,5 @@
 import {
-    Bell,
-    CreditCard,
-    LogOut,
-    Sparkles, Sun,
+    LogOut, Settings2,Sun,
 } from "lucide-react"
 
 import {
@@ -23,6 +20,7 @@ import {useTheme} from "@/context/themeProvider.tsx";
 import {Switch} from "@/components/ui/switch";
 import * as React from "react";
 import useAuth from "@/context/authProvider.tsx";
+import {Link} from "react-router-dom";
 
 
 export function NavUser() {
@@ -73,10 +71,12 @@ export function NavUser() {
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator/>
                 <DropdownMenuGroup>
-                    <DropdownMenuItem>
-                        <Sparkles/>
-                        Upgrade to Pro
-                    </DropdownMenuItem>
+                   <Link to={"/profile"}>
+                       <DropdownMenuItem>
+                           <Settings2/>
+                           Manage Profile
+                       </DropdownMenuItem>
+                   </Link>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator/>
                 <DropdownMenuGroup>
@@ -86,15 +86,6 @@ export function NavUser() {
                         <Switch onClick={(e)=>toggleTheme(e)} checked={theme === "dark"}/>
                     </DropdownMenuItem>
 
-
-                    <DropdownMenuItem>
-                        <CreditCard/>
-                        Billing
-                    </DropdownMenuItem>
-                    <DropdownMenuItem>
-                        <Bell/>
-                        Notifications
-                    </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator/>
                 <DropdownMenuItem variant={"destructive"} onClick={logout}>

@@ -10,7 +10,7 @@ function ScreenLoader() {
                     <div className="h-2.5 w-2.5 sm:h-4 sm:w-4 bg-blue-600 rounded-full animate-bounce"></div>
                 </div>
 
-                {/* Triangle pointer */}
+
                 <div
                     className="absolute -bottom-2 sm:-bottom-3 left-1/2 -translate-x-1/2
           w-0 h-0

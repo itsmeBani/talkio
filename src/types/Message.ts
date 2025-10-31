@@ -14,6 +14,9 @@ export interface Message{
     };
     reactions: Reaction[];
 }
+
+
+
 export interface ReactionUser {
     id: string;
     full_name: string | null;
@@ -22,7 +25,7 @@ export interface ReactionUser {
 
 export interface Reaction {
     emoji: string;
-    created_at: string; // ISO string from Supabase
+    created_at: string;
     user: ReactionUser;
 }
 

@@ -10,10 +10,10 @@ import {
 } from "@/components/ui/drawer.tsx"
 
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs.tsx";
-import ConversationFilesViewer from "@/feature/ConversationSettings/ConversationFilesViewer.tsx";
+import ConversationFilesViewer from "@/feature/conversation/ConversationFilesViewer.tsx";
 import {useQueries} from "@tanstack/react-query";
 import {fetchConversationFiles} from "@/query/fetchFiles.ts";
-import ManageConversation from "@/feature/ConversationSettings/ManageConversation.tsx";
+import ManageConversation from "@/feature/conversation/ManageConversation.tsx";
 import {buttonVariants} from "@/components/ui/button.tsx";
 import {Link} from "react-router-dom";
 import {cn} from "@/lib/utils.ts";

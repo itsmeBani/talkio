@@ -1,12 +1,17 @@
 import Layout from "./pages/__layout"
-import Login from "@/pages/login.tsx";
+
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import MessagePage from "./pages/message";
 import Settings from "./pages/settings";
 import Feed from "@/pages/feed.tsx";
-import UserMessages from "@/feature/userMessages.tsx";
+
 import ProtectedCommponent from "@/feature/auth/ProtectedCommponent.tsx";
 import PublicComponent from "./feature/auth/PublicComponent";
+import Hero from "@/pages/hero.tsx";
+import {LoginForm} from "@/feature/auth/login-form.tsx";
+import RegisterForm from "@/feature/auth/register-form.tsx";
+import Profile from "@/pages/Profile.tsx";
+import UserMessages from "@/feature/message/user_messages.tsx";
 
 
 function App() {
@@ -29,13 +34,28 @@ function App() {
                     path: "settings", element: <Settings/>
                 },
                 {
+                    path: "profile", element: <Profile/>
+                },
+                {
                     path: "feed", element: <Feed/>
                 }
             ],
         },
         {
-          path: "/login",
-          element:<PublicComponent> <Login/></PublicComponent>
+          path: "auth",
+          element:<PublicComponent> <Hero/></PublicComponent>,
+          children:[
+              {
+                  path: "login",
+                  element: <LoginForm/>
+
+              },
+              {
+                  path: "register",
+                  element: <RegisterForm/>
+
+              }
+          ]
         },
 
     ]);

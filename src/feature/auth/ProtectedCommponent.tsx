@@ -14,7 +14,7 @@ function ProtectedComponent({ children }: ProtectedComponentProps) {
     const {currentUser}=useAuth()
     if (currentUser === undefined) return <ScreenLoader/>
 
-    if (currentUser === null) return <Navigate to="/login" replace />;
+    if (currentUser === null) return <Navigate to="/auth" replace />;
 
     if (currentUser)  return children
 }

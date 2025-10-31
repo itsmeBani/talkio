@@ -1,5 +1,5 @@
-import { NavUser } from "@/components/nav-user";
-import { MessageSquareMore, Settings2, GalleryVerticalEnd ,Origami,UserPlusIcon} from "lucide-react";
+import { NavUser } from "@/components/nav-user.tsx";
+import {MessageSquareMore, Origami} from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 function Sidebar() {
@@ -21,15 +21,9 @@ function Sidebar() {
                 <NavLink to="/" className={SidebarStyle}>
                     <MessageSquareMore strokeWidth={2.3} />
                 </NavLink>
-                <NavLink to="/feed" className={SidebarStyle}>
-                    <GalleryVerticalEnd strokeWidth={2.3} />
-                </NavLink>
-                <NavLink to="/settings" className={SidebarStyle}>
-                    <UserPlusIcon strokeWidth={2.3} />
-                </NavLink>
-                <NavLink to="/settings" className={SidebarStyle}>
-                    <Settings2 strokeWidth={2.3} />
-                </NavLink>
+
+
+
 
             </div>
 

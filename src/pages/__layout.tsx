@@ -1,4 +1,4 @@
-import Sidebar from "@/feature/sidebar.tsx";
+import Sidebar from "@/components/sidebar.tsx";
 
 import {Outlet} from "react-router-dom";
 

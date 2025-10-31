@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {useQuery} from "@tanstack/react-query";
 import {fetchUsers} from "@/query/fetchUsers.ts";
 import {useRealtimeUsers} from "@/hooks/useRealTimeUser.ts";
-import UserCard from "@/components/UserCard.tsx";
+import UserCard from "@/feature/users/component/UserCard.tsx";
 import UserCardSkeleton from "@/components/loader/UserCardSkeleton.tsx";
 
 
@@ -42,6 +42,9 @@ export function Users() {
                         </div>)
                 })}
             </>}
+
+
+
             {usersData?.map((user) => (
                 <Link to={`message/${user?.id}`} key={user.id} className="w-full px-2 hover:bg-muted rounded-md">
                     <UserCard user={user}/>
